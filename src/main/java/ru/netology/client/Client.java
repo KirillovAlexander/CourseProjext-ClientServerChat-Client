@@ -1,6 +1,6 @@
 package ru.netology.client;
 
-import ru.netology.logger.Logger;
+import ru.netology.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ public class Client {
     private static final String SETTINGS_FILE_NAME = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "Settings.txt";
 
     public static void main(String[] args) {
-        Setting setting = getSetting();
+        Setting setting = getSetting(SETTINGS_FILE_NAME);
         if (setting == null) return;
         Scanner scanner = new Scanner(System.in);
         String name = getUserName(scanner);
@@ -34,9 +34,9 @@ public class Client {
         }
     }
 
-    private static Setting getSetting() {
+    static Setting getSetting(String path) {
         StringBuilder settingsAsString = new StringBuilder();
-        try (FileReader fileReader = new FileReader(SETTINGS_FILE_NAME)) {
+        try (FileReader fileReader = new FileReader(path)) {
             int c;
             while ((c = fileReader.read()) != -1) {
                 settingsAsString.append((char) c);
@@ -74,7 +74,7 @@ public class Client {
         return scanner.nextLine();
     }
 
-    private static boolean chatting(Scanner scanner, SocketChannel socketChannel) throws IOException{
+    static boolean chatting(Scanner scanner, SocketChannel socketChannel) throws IOException{
         String message;
         message = scanner.nextLine();
         if (message.equals("/exit")) return false;

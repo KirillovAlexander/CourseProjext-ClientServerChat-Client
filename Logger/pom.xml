@@ -4,12 +4,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ru.netology</groupId>
-  <artifactId>Client</artifactId>
-  <packaging>pom</packaging>
-  <version>0.1</version>
+  <parent>
+    <artifactId>Client</artifactId>
+    <groupId>ru.netology</groupId>
+    <version>0.1</version>
+  </parent>
 
-  <name>Client</name>
+  <artifactId>Logger</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>Logger</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,39 +21,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>ru.netology</groupId>
-      <artifactId>Logger</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.10.19</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-all</artifactId>
-      <version>1.3</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <modules>
-    <module>Logger</module>
-  </modules>
-
   <build>
-    <finalName>Client</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->

@@ -1,4 +1,4 @@
-package ru.netology.logger;
+package ru.netology;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,7 +12,7 @@ public class Logger {
     private Logger() {
     }
 
-    public static Logger getInstance() {
+    public static synchronized Logger getInstance() {
         if (instance == null) {
             instance = new Logger();
         }

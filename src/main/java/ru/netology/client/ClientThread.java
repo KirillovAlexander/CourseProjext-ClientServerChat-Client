@@ -1,6 +1,6 @@
 package ru.netology.client;
 
-import ru.netology.logger.Logger;
+import ru.netology.Logger;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
